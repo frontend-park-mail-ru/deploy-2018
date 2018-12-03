@@ -5,6 +5,7 @@ node_js:
 sudo: required
 
 script:
+- chmod 600 ./jsdaddy_id_rsa.pem
 - ssh-keyscan -H 95.163.248.216 >> ~/.ssh/known_hosts
 - scp -i ./jsdaddy_id_rsa.pem ./index.html ubuntu@95.163.248.216:/home/ubuntu/www/index.html
 branches:
