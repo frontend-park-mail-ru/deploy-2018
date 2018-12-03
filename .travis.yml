@@ -1,7 +1,11 @@
 language: node_js
 node_js:
 - 10
+
+sudo: required
+
 script:
+- ssh-keyscan -H 95.163.248.216 >> ~/.ssh/known_hosts
 - scp -i ./jsdaddy_id_rsa.pem ./index.html ubuntu@95.163.248.216:/home/ubuntu/www/index.html
 branches:
   only:
